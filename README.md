@@ -89,8 +89,9 @@ class SOMUniformization: ... # uses SOM points to uniformize input density
 
 # uses local gradient descent, PCA, or another algorithm 
 # to adjust weight matrix s.t. it produces an identity 
-# vector output if the input is 'normal'. Then you can
-# subtract output-1 to get the error (feedback)
+# vector output if the input is 'normal' or produces a
+# zero vecotr output (which is non-zero during unexpected
+# events).
 class IdentityNormalization: ...
 
 # Unsupervised deep learning udl
@@ -107,7 +108,7 @@ class BatchNormalization(Normalization): ...
 # - L1, L2, L1L2 regularization
 # - dropout
 # default activation=relu, dropout=0.0, L2_reg=0.001
-class MLP: ...  
+class MLUP: ...  
 
 class Swapout: ...
 class Dropout: ...
